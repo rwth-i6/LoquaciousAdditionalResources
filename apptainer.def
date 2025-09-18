@@ -1,0 +1,29 @@
+######################################
+# Apptainer image for sequitur & KenLM
+######################################
+Bootstrap: docker
+From: ubuntu:22.04
+stage: build
+
+%environment
+    export TMP=/var/tmp
+    export TMPDIR=/var/tmp
+
+%post
+    export TMP=/var/tmp
+    export TMPDIR=/var/tmp
+
+    apt update -y
+
+    # all the fundamental basics
+    DEBIAN_FRONTEND=noninteractive apt install -y wget git unzip gzip libssl-dev cmake build-essential libboost-all-dev zlib1g-dev
+
+    # Python
+    apt install -y python3 python3-pip python3-venv
+
+    # general
+    pip3 install -U pip setuptools wheel cython
+    
+    # Sequitur and Hugginface
+    pip3 install numpy==1.26.4 sequitur-g2p==1.0.1668.23 tqdm datasets
+

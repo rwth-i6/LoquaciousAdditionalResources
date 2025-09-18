@@ -1,0 +1,8 @@
+cmudict-0.7b
+kenlm/
+g2p_*
+*.sif
+*.txt
+*.arpa.gz
+
+.history.*
