@@ -1,3 +1,9 @@
+"""
+Extracts the text from the huggingface Loquacious train.large corpus.
+
+This is suboptimal as the whole corpus including audio needs to be downloaded.
+Maybe clarify if the text corpus can be published somewhere.
+"""
 import datasets
 import os
 import tqdm
