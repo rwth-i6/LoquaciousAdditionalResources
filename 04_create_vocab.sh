@@ -2,7 +2,7 @@
 set -vex
 
 # create a file containing all words with the respective word count
-cat loquacious.txt | tr ' ' '\n' | sort | uniq -c > loquacious.counts.txt
+cat loquacious-large.txt | tr ' ' '\n' | sort | uniq -c > loquacious.counts.txt
 
 # create a file containing all unique words only
 cat loquacious.counts.txt | awk '{print $2}' | sort > loquacious.words.txt
