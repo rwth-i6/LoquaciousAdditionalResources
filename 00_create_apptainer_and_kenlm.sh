@@ -5,10 +5,10 @@ set -vex
 
 PWD=$(pwd)
 BIND=$(realpath $PWD)
-if [! -f apptainer.def ]; then
+if [ ! -f apptainer.sif ]; then
     apptainer build apptainer.sif apptainer.def
 fi
-if [! -d kenlm ]; then
+if [ ! -d kenlm ]; then
     git clone https://github.com/kpu/kenlm.git
 fi
 cd kenlm
