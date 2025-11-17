@@ -15,7 +15,7 @@ echo "$SHA256 cmudict-0.7b"  | sha256sum  -c
 # 3. remove the marker for pronunciation variant number
 # 4. remove special cases where the word already contains numbers
 # 5. remove stress marker numbers
-cat cmudict-0.7b | grep -v "^;;;" | grep "^[a-zA-Z'][a-zA-Z0-9' ()]*$" | sed 's/([0-9])//g' | grep -v "^[A-Z0-9']*[0-9][A-Z0-9']* " | sed 's/[0-9]//g' > cmudict.g2p-train.txt
+cat cmudict-0.7b | grep -v "^;;;" | grep "^[a-zA-Z'][a-zA-Z0-9' ()]*$" | sed 's/([0-9])//g' | grep -v "^[A-Z']*[0-9][A-Z0-9']* " | sed 's/[0-9]//g' > cmudict.g2p-train.txt
 
 # Extract only the words for later usage
-cat cmudict.g2p-train.txt | cut -d' ' -f1 | sort | uniq | sort > cmudict.words.txt
+cat cmudict.g2p-train.txt | cut -d' ' -f1 | sort | uniq > cmudict.words.txt
