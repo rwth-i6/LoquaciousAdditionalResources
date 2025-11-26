@@ -2,6 +2,10 @@
 
 This repository contains scripts to create pronunciation lexica and count-based language model in ARPA-format for the [Loquacious dataset](https://huggingface.co/datasets/speechbrain/LoquaciousSet).
 
+## Download Files
+
+The files created by the scripts are hosted within the [official Loquacious HuggingFace repository](https://huggingface.co/datasets/speechbrain/LoquaciousSet/tree/main). You can download the final LM, vocab and lexicon files from there. Intermedate files are not available.
+
 ## Usage
 
 This repository uses Apptainer for a containerized environment to run the exact build process on any machine.
@@ -13,5 +17,3 @@ You can call `00_create_apptainer_and_kenlm.sh` to create the apptainer image an
 `apptainer run --bind <current_filesystem_root> 01_prepare_cmudict.sh`
 
 The bind parameter is necessary in case you are not operating within your user folder. For more information on binds look [here](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html).
-
-
